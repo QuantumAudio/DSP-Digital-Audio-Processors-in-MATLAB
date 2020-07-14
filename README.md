@@ -1,2 +1,2 @@
 # Digital-Audio-Effects
-Digital audio processors
+This repository contains different kinds of digital audio processors written in MATLAB. Each .zip file contains all the files needed to run the program and a .pdf file called "Description and Theory". The theory assumes the reader has taken a course in linear signals and systems as well as the introductory topics of digital signal processing (DSP). Reading them in order will provide an introduction to sample-by-sample processing methods, explaining the theory along the way. 
