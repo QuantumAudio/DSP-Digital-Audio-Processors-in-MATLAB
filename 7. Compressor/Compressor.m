@@ -1,14 +1,8 @@
 %% Compressor
 
 %% Defining Input Signal
-
 fs = 8000; % sampling rate
 Ts = 1/fs; % sampling period
-ta = 0.002; % attack time
-tr = 0.01; % release time
-Aa = exp(-2.3*Ts/ta); % attack forgetting factor
-Ar = exp(-2.3*Ts/tr); % release forgetting factor
-
 % Defining three sinusoids to be played consecutively
 A1 = 2; % Amplitude of first sinusoid
 f1 = 300; % f1 = 0.3 kHz
@@ -32,8 +26,10 @@ text(60,3.8,'f_1 = 0.3 kHz');text(60,3.3,'f_2 = 0.6 kHz');
 text(60,2.8,'f_3 = 1.2 kHz'); xlabel('t (msec)'), title('input signal, x(t)')
 
 %% Compressor Design
-Aa = 0.8661; % lambda_a
-Ar = 0.9717; % lambda_r
+ta = 0.002; % attack time
+tr = 0.01; % release time
+Aa = exp(-2.3*Ts/ta); % attack forgetting factor
+Ar = exp(-2.3*Ts/tr); % release forgetting factor
 p = 1/3;     % rho
 c0 = 1;      % threshold
 L = ceil((1 + Aa)/(1 - Aa)); % Length of FIR gain-smoothing filter
